@@ -1,0 +1,835 @@
+{
+ "steps": 60,
+ "horizon": 10,
+ "reps": 3,
+ "env": {
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "python": "3.11.13",
+  "numpy": "2.4.6",
+  "osqp": "1.1.3",
+  "proxsuite": "0.8.2",
+  "piqp": "0.7.0",
+  "daqp": null,
+  "qpsolvers": "4.13.0"
+ },
+ "obj_tol": 1e-06,
+ "sweep": [
+  {
+   "perturbation": {
+    "sigma": 0.0,
+    "median_rel_step": 0.00013601153773979744,
+    "max_rel_step": 0.18300156708896576,
+    "min_rel_step": 2.2644208801342663e-05,
+    "reference_solver": "daqp (native API)",
+    "reference_exitflags": [
+     1
+    ],
+    "closed_loop": true
+   },
+   "drift_floor": 1.0282458348631556,
+   "results": {
+    "OSQP": {
+     "reps": 3,
+     "note": "persistent object; `warm_start` toggled for the reset leg. Default `check_termination` is 25, so no solve can report fewer iterations than that",
+     "cold_ms": 1.333416992565617,
+     "reset_ms": 0.2455829962855205,
+     "warm_ms": 0.2444170240778476,
+     "setup_reuse": 5.429598191787494,
+     "warm_start": 1.0047704214224518,
+     "total": 5.455499663316903,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 1.505133572083741e-06,
+      "reset": 2.5035046716385514e-06,
+      "warm": 2.765315878075961e-06
+     },
+     "leg_consistency": {
+      "reset": 2.503495957999053e-06,
+      "warm": 2.693502374024643e-06
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 75.0,
+      "reset": 25.0,
+      "warm": 25.0
+     },
+     "drift": 1.002893629051033,
+     "generic_cold_ms": 1.5284999972209334,
+     "generic_warm_ms": 0.9638540068408474,
+     "generic_speedup": 1.5858210749476305,
+     "generic_steps_with_guess": 59
+    },
+    "ProxQP": {
+     "reps": 3,
+     "note": "WARM_START_WITH_PREVIOUS_RESULT set after the first solve; eps_primal_inf=1e-9 (non-default) on every leg",
+     "cold_ms": 0.1365000061923638,
+     "reset_ms": 0.10566698620095849,
+     "warm_ms": 0.06712500180583447,
+     "setup_reuse": 1.2917942594933745,
+     "warm_start": 1.574182247422658,
+     "total": 2.0335195906169687,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 2.5826794678961835e-08,
+      "reset": 2.5826794678961835e-08,
+      "warm": 2.202779390466985e-07
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 2.1903097538613727e-07
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0040407004866363,
+     "generic_cold_ms": 0.12933350808452815,
+     "generic_warm_ms": 0.12672899174503982,
+     "generic_speedup": 1.0205518587627387,
+     "generic_steps_with_guess": 58
+    },
+    "PIQP": {
+     "reps": 3,
+     "note": "no warm-start facility (interior point); warm leg not available",
+     "cold_ms": 1.6185209969989955,
+     "reset_ms": 1.5902290033409372,
+     "warm_ms": null,
+     "setup_reuse": 1.017791144293444,
+     "warm_start": null,
+     "total": null,
+     "warm_leg_available": false,
+     "obj_gap_vs_exact": {
+      "cold": 1.858576674623737e-10,
+      "reset": 1.858576674623737e-10
+     },
+     "leg_consistency": {
+      "reset": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 10.0,
+      "reset": 10.0
+     },
+     "drift": 1.0282458348631556,
+     "generic_cold_ms": 1.6224580176640302,
+     "generic_warm_ms": 1.6235000075539574,
+     "generic_speedup": 0.9993581830088827,
+     "generic_steps_with_guess": 59
+    },
+    "DAQP": {
+     "reps": 3,
+     "note": "working set cleared by a zeroed `sense` on the reset leg",
+     "cold_ms": 0.2679169992916286,
+     "reset_ms": 0.010707997716963291,
+     "warm_ms": 0.008875009370967746,
+     "setup_reuse": 25.02027049064481,
+     "warm_start": 1.206533680064799,
+     "total": 30.18779903129437,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 0.0,
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0118578380458099,
+     "generic_cold_ms": 0.0568544928682968,
+     "generic_warm_ms": 0.0610624992987141,
+     "generic_speedup": 0.9310868949233149,
+     "generic_steps_with_guess": 59
+    }
+   },
+   "osqp_check_termination": {
+    "25": {
+     "reset": {
+      "median_ms": 0.23595799575559795,
+      "median_iters": 25.0
+     },
+     "warm": {
+      "median_ms": 0.23491699539590627,
+      "median_iters": 25.0
+     },
+     "warm_start": 1.004431353967972,
+     "iter_ratio": 1.0
+    },
+    "1": {
+     "reset": {
+      "median_ms": 0.12379199324641377,
+      "median_iters": 7.0
+     },
+     "warm": {
+      "median_ms": 0.022249994799494743,
+      "median_iters": 1.0
+     },
+     "warm_start": 5.563686390130071,
+     "iter_ratio": 7.0
+    }
+   }
+  },
+  {
+   "perturbation": {
+    "sigma": 2e-05,
+    "median_rel_step": 0.0012619555772124737,
+    "max_rel_step": 0.1820991668501041,
+    "min_rel_step": 0.00017840277204180213,
+    "reference_solver": "daqp (native API)",
+    "reference_exitflags": [
+     1
+    ],
+    "closed_loop": true
+   },
+   "drift_floor": 1.0220664952369387,
+   "results": {
+    "OSQP": {
+     "reps": 3,
+     "note": "persistent object; `warm_start` toggled for the reset leg. Default `check_termination` is 25, so no solve can report fewer iterations than that",
+     "cold_ms": 1.3352084934012964,
+     "reset_ms": 0.2465625002514571,
+     "warm_ms": 0.24579200544394553,
+     "setup_reuse": 5.415294264292349,
+     "warm_start": 1.0031347431586308,
+     "total": 5.432269820939312,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 1.505133572083741e-06,
+      "reset": 2.5045220246569746e-06,
+      "warm": 2.7660732995922673e-06
+     },
+     "leg_consistency": {
+      "reset": 2.5045154572778255e-06,
+      "warm": 2.6939620552939667e-06
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 75.0,
+      "reset": 25.0,
+      "warm": 25.0
+     },
+     "drift": 1.0070522532500377,
+     "generic_cold_ms": 1.5336039941757917,
+     "generic_warm_ms": 0.9669585124356672,
+     "generic_speedup": 1.586008059759259,
+     "generic_steps_with_guess": 59
+    },
+    "ProxQP": {
+     "reps": 3,
+     "note": "WARM_START_WITH_PREVIOUS_RESULT set after the first solve; eps_primal_inf=1e-9 (non-default) on every leg",
+     "cold_ms": 0.13622948608826846,
+     "reset_ms": 0.10583300900179893,
+     "warm_ms": 0.06770800973754376,
+     "setup_reuse": 1.2872116872908042,
+     "warm_start": 1.563079603314865,
+     "total": 2.0120143335527683,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 2.5810457207349342e-08,
+      "reset": 2.5810457207349342e-08,
+      "warm": 2.200976216809737e-07
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 2.188502701647655e-07
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0056668452337476,
+     "generic_cold_ms": 0.12970800162293017,
+     "generic_warm_ms": 0.1282915036426857,
+     "generic_speedup": 1.011041245445136,
+     "generic_steps_with_guess": 58
+    },
+    "PIQP": {
+     "reps": 3,
+     "note": "no warm-start facility (interior point); warm leg not available",
+     "cold_ms": 1.629041988053359,
+     "reset_ms": 1.6022290074033663,
+     "warm_ms": null,
+     "setup_reuse": 1.0167347991617297,
+     "warm_start": null,
+     "total": null,
+     "warm_leg_available": false,
+     "obj_gap_vs_exact": {
+      "cold": 2.0366431629683695e-10,
+      "reset": 2.0366431629683695e-10
+     },
+     "leg_consistency": {
+      "reset": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 10.0,
+      "reset": 10.0
+     },
+     "drift": 1.0220664952369387,
+     "generic_cold_ms": 1.6354164981748909,
+     "generic_warm_ms": 1.636541506741196,
+     "generic_speedup": 0.9993125694877454,
+     "generic_steps_with_guess": 59
+    },
+    "DAQP": {
+     "reps": 3,
+     "note": "working set cleared by a zeroed `sense` on the reset leg",
+     "cold_ms": 0.26820850325748324,
+     "reset_ms": 0.010791511158458889,
+     "warm_ms": 0.008917006198316813,
+     "setup_reuse": 24.853655740998697,
+     "warm_start": 1.2102168506393896,
+     "total": 30.078312977747025,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 0.0,
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0077360624744007,
+     "generic_cold_ms": 0.05579150456469506,
+     "generic_warm_ms": 0.06077099533285946,
+     "generic_speedup": 0.9180613919372168,
+     "generic_steps_with_guess": 59
+    }
+   },
+   "osqp_check_termination": {
+    "25": {
+     "reset": {
+      "median_ms": 0.23618750856257975,
+      "median_iters": 25.0
+     },
+     "warm": {
+      "median_ms": 0.2350624999962747,
+      "median_iters": 25.0
+     },
+     "warm_start": 1.0047859976232827,
+     "iter_ratio": 1.0
+    },
+    "1": {
+     "reset": {
+      "median_ms": 0.14025000564288348,
+      "median_iters": 7.0
+     },
+     "warm": {
+      "median_ms": 0.021624990040436387,
+      "median_iters": 1.0
+     },
+     "warm_start": 6.485552380862658,
+     "iter_ratio": 7.0
+    }
+   }
+  },
+  {
+   "perturbation": {
+    "sigma": 0.0001,
+    "median_rel_step": 0.005966324531262523,
+    "max_rel_step": 0.17849570538806067,
+    "min_rel_step": 0.0004185371291265761,
+    "reference_solver": "daqp (native API)",
+    "reference_exitflags": [
+     1
+    ],
+    "closed_loop": true
+   },
+   "drift_floor": 1.0212525191456054,
+   "results": {
+    "OSQP": {
+     "reps": 3,
+     "note": "persistent object; `warm_start` toggled for the reset leg. Default `check_termination` is 25, so no solve can report fewer iterations than that",
+     "cold_ms": 1.3323960010893643,
+     "reset_ms": 0.24533350369893014,
+     "warm_ms": 0.24472951190546155,
+     "setup_reuse": 5.430958189569012,
+     "warm_start": 1.0024679973770467,
+     "total": 5.444361780135719,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 1.505133572083741e-06,
+      "reset": 2.50859570938519e-06,
+      "warm": 2.7680059795328187e-06
+     },
+     "leg_consistency": {
+      "reset": 2.508594487159366e-06,
+      "warm": 2.694704316913601e-06
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 75.0,
+      "reset": 25.0,
+      "warm": 25.0
+     },
+     "drift": 1.0212525191456054,
+     "generic_cold_ms": 1.5285624976968393,
+     "generic_warm_ms": 0.9625000093365088,
+     "generic_speedup": 1.5881168653188282,
+     "generic_steps_with_guess": 59
+    },
+    "ProxQP": {
+     "reps": 3,
+     "note": "WARM_START_WITH_PREVIOUS_RESULT set after the first solve; eps_primal_inf=1e-9 (non-default) on every leg",
+     "cold_ms": 0.1375834981445223,
+     "reset_ms": 0.1058329944498837,
+     "warm_ms": 0.06779150862712413,
+     "setup_reuse": 1.3000057199522383,
+     "warm_start": 1.5611541414722072,
+     "total": 2.0295093136409954,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 2.574516524715367e-08,
+      "reset": 2.574516524715367e-08,
+      "warm": 2.193778295428136e-07
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 2.1812891313914537e-07
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0111393052264939,
+     "generic_cold_ms": 0.1295830006711185,
+     "generic_warm_ms": 0.12747901200782508,
+     "generic_speedup": 1.0165045887174295,
+     "generic_steps_with_guess": 58
+    },
+    "PIQP": {
+     "reps": 3,
+     "note": "no warm-start facility (interior point); warm leg not available",
+     "cold_ms": 1.6226040024776012,
+     "reset_ms": 1.5913340030238032,
+     "warm_ms": null,
+     "setup_reuse": 1.0196501799084163,
+     "warm_start": null,
+     "total": null,
+     "warm_leg_available": false,
+     "obj_gap_vs_exact": {
+      "cold": 2.907883222649137e-10,
+      "reset": 2.907883222649137e-10
+     },
+     "leg_consistency": {
+      "reset": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 10.0,
+      "reset": 10.0
+     },
+     "drift": 1.005621546954111,
+     "generic_cold_ms": 1.6261870041489601,
+     "generic_warm_ms": 1.6308960039168596,
+     "generic_speedup": 0.9971126302617763,
+     "generic_steps_with_guess": 59
+    },
+    "DAQP": {
+     "reps": 3,
+     "note": "working set cleared by a zeroed `sense` on the reset leg",
+     "cold_ms": 0.2681879996089265,
+     "reset_ms": 0.010832998668774962,
+     "warm_ms": 0.008874994819052517,
+     "setup_reuse": 24.7565801315892,
+     "warm_start": 1.2206202808726234,
+     "total": 30.218383793666018,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 0.0,
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0137779764530896,
+     "generic_cold_ms": 0.05497950769495219,
+     "generic_warm_ms": 0.05968801269773394,
+     "generic_speedup": 0.9211147299102402,
+     "generic_steps_with_guess": 59
+    }
+   },
+   "osqp_check_termination": {
+    "25": {
+     "reset": {
+      "median_ms": 0.23525000142399222,
+      "median_iters": 25.0
+     },
+     "warm": {
+      "median_ms": 0.2353959862375632,
+      "median_iters": 25.0
+     },
+     "warm_start": 0.999379833038344,
+     "iter_ratio": 1.0
+    },
+    "1": {
+     "reset": {
+      "median_ms": 0.12412499927449971,
+      "median_iters": 7.0
+     },
+     "warm": {
+      "median_ms": 0.02158300776500255,
+      "median_iters": 1.0
+     },
+     "warm_start": 5.751051967639648,
+     "iter_ratio": 7.0
+    }
+   }
+  },
+  {
+   "perturbation": {
+    "sigma": 0.0005,
+    "median_rel_step": 0.0276373489609762,
+    "max_rel_step": 0.1606463376343822,
+    "min_rel_step": 0.0016356177218087447,
+    "reference_solver": "daqp (native API)",
+    "reference_exitflags": [
+     1
+    ],
+    "closed_loop": true
+   },
+   "drift_floor": 1.0116280014186432,
+   "results": {
+    "OSQP": {
+     "reps": 3,
+     "note": "persistent object; `warm_start` toggled for the reset leg. Default `check_termination` is 25, so no solve can report fewer iterations than that",
+     "cold_ms": 1.3306460023159161,
+     "reset_ms": 0.24674998712725937,
+     "warm_ms": 0.24608350940980017,
+     "setup_reuse": 5.3926892471513925,
+     "warm_start": 1.0027083396163265,
+     "total": 5.40729448107799,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 1.505133572083741e-06,
+      "reset": 4.639201715183548e-06,
+      "warm": 2.7774433287611132e-06
+     },
+     "leg_consistency": {
+      "reset": 4.5604241323919995e-06,
+      "warm": 2.6986655993040593e-06
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 75.0,
+      "reset": 25.0,
+      "warm": 25.0
+     },
+     "drift": 1.007670213312822,
+     "generic_cold_ms": 1.5288125141523778,
+     "generic_warm_ms": 0.967875006608665,
+     "generic_speedup": 1.5795557315909836,
+     "generic_steps_with_guess": 59
+    },
+    "ProxQP": {
+     "reps": 3,
+     "note": "WARM_START_WITH_PREVIOUS_RESULT set after the first solve; eps_primal_inf=1e-9 (non-default) on every leg",
+     "cold_ms": 0.13647899322677404,
+     "reset_ms": 0.10616649524308741,
+     "warm_ms": 0.06783400021959096,
+     "setup_reuse": 1.2855184953998968,
+     "warm_start": 1.5650926511691365,
+     "total": 2.011955550092384,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 2.542006165266213e-08,
+      "reset": 2.542006165266213e-08,
+      "warm": 2.1543171567008892e-07
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 2.0888476909075518e-07
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.005121478029023,
+     "generic_cold_ms": 0.1291459921048954,
+     "generic_warm_ms": 0.12745849380735308,
+     "generic_speedup": 1.013239590765076,
+     "generic_steps_with_guess": 58
+    },
+    "PIQP": {
+     "reps": 3,
+     "note": "no warm-start facility (interior point); warm leg not available",
+     "cold_ms": 1.6230000037467107,
+     "reset_ms": 1.5941454912535846,
+     "warm_ms": null,
+     "setup_reuse": 1.0181003005380869,
+     "warm_start": null,
+     "total": null,
+     "warm_leg_available": false,
+     "obj_gap_vs_exact": {
+      "cold": 9.72650053676494e-10,
+      "reset": 9.72650053676494e-10
+     },
+     "leg_consistency": {
+      "reset": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 10.0,
+      "reset": 10.0
+     },
+     "drift": 1.0032188982430648,
+     "generic_cold_ms": 1.6219999961322173,
+     "generic_warm_ms": 1.6233130008913577,
+     "generic_speedup": 0.9991911573686533,
+     "generic_steps_with_guess": 59
+    },
+    "DAQP": {
+     "reps": 3,
+     "note": "working set cleared by a zeroed `sense` on the reset leg",
+     "cold_ms": 0.26804200024344027,
+     "reset_ms": 0.010791001841425896,
+     "warm_ms": 0.00899998121894896,
+     "setup_reuse": 24.839398990225906,
+     "warm_start": 1.1990027066618807,
+     "total": 29.782506621135244,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 0.0,
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0116280014186432,
+     "generic_cold_ms": 0.05502100975718349,
+     "generic_warm_ms": 0.061416998505592346,
+     "generic_speedup": 0.8958596332605465,
+     "generic_steps_with_guess": 59
+    }
+   },
+   "osqp_check_termination": {
+    "25": {
+     "reset": {
+      "median_ms": 0.2357085031690076,
+      "median_iters": 25.0
+     },
+     "warm": {
+      "median_ms": 0.23452049936167896,
+      "median_iters": 25.0
+     },
+     "warm_start": 1.0050656714895378,
+     "iter_ratio": 1.0
+    },
+    "1": {
+     "reset": {
+      "median_ms": 0.1236669922946021,
+      "median_iters": 7.0
+     },
+     "warm": {
+      "median_ms": 0.041958497604355216,
+      "median_iters": 2.0
+     },
+     "warm_start": 2.9473646425739917,
+     "iter_ratio": 3.5
+    }
+   }
+  },
+  {
+   "perturbation": {
+    "sigma": 0.002,
+    "median_rel_step": 0.10404575152154828,
+    "max_rel_step": 0.3505182768974791,
+    "min_rel_step": 0.006239582654109514,
+    "reference_solver": "daqp (native API)",
+    "reference_exitflags": [
+     1
+    ],
+    "closed_loop": true
+   },
+   "drift_floor": 1.0092839681880779,
+   "results": {
+    "OSQP": {
+     "reps": 3,
+     "note": "persistent object; `warm_start` toggled for the reset leg. Default `check_termination` is 25, so no solve can report fewer iterations than that",
+     "cold_ms": 1.3301460130605847,
+     "reset_ms": 0.2458749950164929,
+     "warm_ms": 0.2448330051265657,
+     "setup_reuse": 5.409846629468607,
+     "warm_start": 1.0042559208444488,
+     "total": 5.432870508504234,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 1.505133572083741e-06,
+      "reset": 4.546992070945248e-06,
+      "warm": 2.759698377494473e-06
+     },
+     "leg_consistency": {
+      "reset": 4.460186715836669e-06,
+      "warm": 2.6728928672385244e-06
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 75.0,
+      "reset": 25.0,
+      "warm": 25.0
+     },
+     "drift": 1.0028868271548659,
+     "generic_cold_ms": 1.5245204995153472,
+     "generic_warm_ms": 0.9651455038692802,
+     "generic_speedup": 1.5795758187791642,
+     "generic_steps_with_guess": 59
+    },
+    "ProxQP": {
+     "reps": 3,
+     "note": "WARM_START_WITH_PREVIOUS_RESULT set after the first solve; eps_primal_inf=1e-9 (non-default) on every leg",
+     "cold_ms": 0.1365830103168264,
+     "reset_ms": 0.10620799730531871,
+     "warm_ms": 0.06789600593037903,
+     "setup_reuse": 1.2859955350084222,
+     "warm_start": 1.564274596862517,
+     "total": 2.0116501470922965,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 2.23151169298348e-08,
+      "reset": 2.23151169298348e-08,
+      "warm": 1.9646041704365566e-07
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 1.9576416943025672e-07
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0090436748207308,
+     "generic_cold_ms": 0.12956198770552874,
+     "generic_warm_ms": 0.1273334928555414,
+     "generic_speedup": 1.0175012465299726,
+     "generic_steps_with_guess": 57
+    },
+    "PIQP": {
+     "reps": 3,
+     "note": "no warm-start facility (interior point); warm leg not available",
+     "cold_ms": 1.6245000006165355,
+     "reset_ms": 1.5946039929986,
+     "warm_ms": null,
+     "setup_reuse": 1.0187482332599187,
+     "warm_start": null,
+     "total": null,
+     "warm_leg_available": false,
+     "obj_gap_vs_exact": {
+      "cold": 1.1952382885505541e-10,
+      "reset": 1.1952382885505541e-10
+     },
+     "leg_consistency": {
+      "reset": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 10.0,
+      "reset": 10.0
+     },
+     "drift": 1.0087980362690263,
+     "generic_cold_ms": 1.6271255008177832,
+     "generic_warm_ms": 1.6293544904328883,
+     "generic_speedup": 0.9986319799477689,
+     "generic_steps_with_guess": 59
+    },
+    "DAQP": {
+     "reps": 3,
+     "note": "working set cleared by a zeroed `sense` on the reset leg",
+     "cold_ms": 0.2681250043679029,
+     "reset_ms": 0.010729505447670817,
+     "warm_ms": 0.008875009370967746,
+     "setup_reuse": 24.989502608072957,
+     "warm_start": 1.208957083782871,
+     "total": 30.21123619824033,
+     "warm_leg_available": true,
+     "obj_gap_vs_exact": {
+      "cold": 0.0,
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "leg_consistency": {
+      "reset": 0.0,
+      "warm": 0.0
+     },
+     "obj_ok": true,
+     "median_iters": {
+      "cold": 1.0,
+      "reset": 1.0,
+      "warm": 1.0
+     },
+     "drift": 1.0092839681880779,
+     "generic_cold_ms": 0.05662548937834799,
+     "generic_warm_ms": 0.06133349961601198,
+     "generic_speedup": 0.923239171624981,
+     "generic_steps_with_guess": 59
+    }
+   },
+   "osqp_check_termination": {
+    "25": {
+     "reset": {
+      "median_ms": 0.23514550412073731,
+      "median_iters": 25.0
+     },
+     "warm": {
+      "median_ms": 0.2353329909965396,
+      "median_iters": 25.0
+     },
+     "warm_start": 0.9992033123999812,
+     "iter_ratio": 1.0
+    },
+    "1": {
+     "reset": {
+      "median_ms": 0.1239580160472542,
+      "median_iters": 7.0
+     },
+     "warm": {
+      "median_ms": 0.09291700553148985,
+      "median_iters": 5.0
+     },
+     "warm_start": 1.3340724374209894,
+     "iter_ratio": 1.4
+    }
+   }
+  }
+ ],
+ "drift_floor": 1.0282458348631556
+}

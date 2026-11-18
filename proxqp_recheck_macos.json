@@ -1,0 +1,70 @@
+{
+ "version": "0.8.2",
+ "platform": "darwin",
+ "rows": [
+  {
+   "N": 10,
+   "mode": "true_defaults",
+   "status": "PROXQP_PRIMAL_INFEASIBLE",
+   "iter": 1,
+   "viol": 16.058226461919237,
+   "obj": 0.0023642312677849883
+  },
+  {
+   "N": 10,
+   "mode": "eps_pinf_1e-6",
+   "status": "PROXQP_SOLVED",
+   "iter": 5,
+   "viol": 6.701047032819929e-07,
+   "obj": -26.448096643357786
+  },
+  {
+   "N": 20,
+   "mode": "true_defaults",
+   "status": "PROXQP_PRIMAL_INFEASIBLE",
+   "iter": 1,
+   "viol": 16.15475292242124,
+   "obj": -0.023711328101754452
+  },
+  {
+   "N": 20,
+   "mode": "eps_pinf_1e-6",
+   "status": "PROXQP_SOLVED",
+   "iter": 5,
+   "viol": 6.85827942170647e-06,
+   "obj": -431.92570742649457
+  },
+  {
+   "N": 30,
+   "mode": "true_defaults",
+   "status": "PROXQP_PRIMAL_INFEASIBLE",
+   "iter": 1,
+   "viol": 17.633682416229025,
+   "obj": 0.39885303617194395
+  },
+  {
+   "N": 30,
+   "mode": "eps_pinf_1e-6",
+   "status": "PROXQP_SOLVED",
+   "iter": 7,
+   "viol": 1.4420677443283125e-06,
+   "obj": -2754.110348040652
+  },
+  {
+   "N": 40,
+   "mode": "true_defaults",
+   "status": "PROXQP_PRIMAL_INFEASIBLE",
+   "iter": 1,
+   "viol": 18.579355713426356,
+   "obj": 0.5506383856043768
+  },
+  {
+   "N": 40,
+   "mode": "eps_pinf_1e-6",
+   "status": "PROXQP_SOLVED",
+   "iter": 7,
+   "viol": 1.071337627500668e-06,
+   "obj": -10862.10180263181
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "Convex QP solvers for real-time control — reproduction package"
+message: "If you use this software or its data, please cite the preprint below."
+type: software
+authors:
+  - family-names: Dinh
+    given-names: Van-Nam
+    affiliation: "Institute of Science and Technology, Vinh University, Vinh, Nghe An, Viet Nam"
+    email: namdv@vinhuni.edu.vn
+license: MIT
+abstract: >-
+  Instance generator, measurement harnesses and raw results for a comparative
+  computational study of fourteen convex quadratic-programming solvers on two
+  problem templates from a legged-robot control stack.
+keywords:
+  - quadratic programming
+  - solver comparison
+  - warm start
+  - reproducible benchmarking
+  - real-time optimization
+preferred-citation:
+  type: article
+  title: "Real-Time QP Solvers: A Review and Practical Guide for Legged Robots"
+  authors:
+    - family-names: Dinh
+      given-names: Van-Nam
+  year: 2025
+  identifiers:
+    - type: other
+      value: "arXiv:2510.21773"
+  url: "https://arxiv.org/abs/2510.21773"

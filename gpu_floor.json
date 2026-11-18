@@ -1,0 +1,58 @@
+{
+  "status": "ok",
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "cupy": "14.2.0",
+  "runtime_version": 13020,
+  "kernel_launch": {
+    "median_ms": 0.010017000022344291,
+    "p99_ms": 0.015874000382609665,
+    "min_ms": 0.009195999155053869
+  },
+  "roundtrip_wbc_data": {
+    "median_ms": 0.0269009979092516,
+    "p99_ms": 0.04546300260699354,
+    "min_ms": 0.023927997972350568
+  },
+  "roundtrip_bytes": 23808,
+  "cholesky_30x30_gpu": {
+    "median_ms": 0.04990949855709914,
+    "p99_ms": 0.07189999814727344,
+    "min_ms": 0.0476120003440883
+  },
+  "cholesky_30x30_cpu": {
+    "median_ms": 0.0056250028137583286,
+    "min_ms": 0.005278998287394643
+  },
+  "batched_cholesky": {
+    "1": {
+      "total_ms": 0.071569000283489,
+      "per_problem_ms": 0.071569000283489,
+      "cpu_serial_ms": 0.0056250028137583286,
+      "speedup_vs_cpu_serial": 0.07859552028779727
+    },
+    "8": {
+      "total_ms": 0.07186299990280531,
+      "per_problem_ms": 0.008982874987850664,
+      "cpu_serial_ms": 0.04500002251006663,
+      "speedup_vs_cpu_serial": 0.6261918173598255
+    },
+    "64": {
+      "total_ms": 0.09141400187218096,
+      "per_problem_ms": 0.0014283437792528275,
+      "cpu_serial_ms": 0.360000180080533,
+      "speedup_vs_cpu_serial": 3.9381295283834192
+    },
+    "512": {
+      "total_ms": 0.3179915001965128,
+      "per_problem_ms": 0.000621077148821314,
+      "cpu_serial_ms": 2.880001440644264,
+      "speedup_vs_cpu_serial": 9.056850383939436
+    },
+    "4096": {
+      "total_ms": 2.770784998574527,
+      "per_problem_ms": 0.0006764611812926091,
+      "cpu_serial_ms": 23.040011525154114,
+      "speedup_vs_cpu_serial": 8.31533718314752
+    }
+  }
+}
