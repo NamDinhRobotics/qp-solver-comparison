@@ -55,8 +55,7 @@ reported, because BLAS threading changes the standing of the dense solvers and
 core pinning decides whether the loop runs on a performance or an efficiency
 core.
 
-No stage needs privileged access. This is also why no energy figure of our own
-is reported: on a stock Linux the Intel RAPL counters under
+No stage needs privileged access. No energy figure is reported for the same reason. On a stock Linux the Intel RAPL counters under
 `/sys/class/powercap` are root-only.
 
 | stage | script | needs |
@@ -100,7 +99,7 @@ See the module docstring.
 | file | contents |
 |---|---|
 | `results.json` | stage-1 Python timings and solution quality, plus the warm-start, infeasibility, overhead and ProxQP-threshold probes; records its own environment block |
-| `cpp_results.json` | native harness timings. **Known gap:** does not record its host; the manuscript says so rather than attributing it |
+| `cpp_results.json` | native harness timings. **Known gap:** does not record its host, and the manuscript states this |
 | `warmstart_controlled.json` | warm-start decomposition over five perturbation sizes |
 | `matched_tolerance.json` | matched-tolerance suboptimality |
 | `wbc_urdf.json` | the URDF-derived whole-body comparison |

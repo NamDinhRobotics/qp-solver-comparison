@@ -178,6 +178,8 @@ def main():
     ap.add_argument("--wsctl", default="warmstart_controlled.json")
     ap.add_argument("--matched", default="matched_tolerance.json")
     ap.add_argument("--outdir", default=".")
+    ap.add_argument("--format", default="png", choices=("png", "pdf"),
+                    help="format for bench_horizon: raster (default) or vector")
     a = ap.parse_args()
     res = json.load(open(a.results))
     os.makedirs(a.outdir, exist_ok=True)
@@ -269,7 +271,7 @@ def main():
     fig.legend(seen.values(), seen.keys(), fontsize=7.5, ncol=6,
                loc="lower center", bbox_to_anchor=(0.5, -0.02), frameon=False)
     fig.tight_layout(rect=(0, 0.09, 1, 1))
-    fig.savefig(os.path.join(a.outdir, "bench_horizon.png"), dpi=220)
+    fig.savefig(os.path.join(a.outdir, "bench_horizon." + a.format), dpi=220)
     print("wrote tables + bench_horizon.png to", a.outdir)
 
 

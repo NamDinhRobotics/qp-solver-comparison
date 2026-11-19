@@ -97,7 +97,7 @@ def fig_pareto(res, outdir):
                  "fastest solver is also an exact one",
                  fontsize=10.5, y=0.99)
     fig.tight_layout(rect=(0, 0, 1, 0.94))
-    fig.savefig(os.path.join(outdir, "fig_pareto.png"), dpi=220)
+    fig.savefig(os.path.join(outdir, "fig_pareto." + FMT), dpi=220)
     plt.close(fig)
 
 
@@ -150,7 +150,7 @@ def fig_budget(res, cpp, outdir):
                  "the field thins out\n(solid = native C++, faded = through "
                  "the Python binding)", fontsize=10)
     fig.tight_layout()
-    fig.savefig(os.path.join(outdir, "fig_budget.png"), dpi=220)
+    fig.savefig(os.path.join(outdir, "fig_budget." + FMT), dpi=220)
     plt.close(fig)
 
 
@@ -259,7 +259,7 @@ def fig_defaults(res, cpp, wsctl, outdir):
     fig.suptitle("Two configuration choices worth orders of magnitude",
                  fontsize=10.5, y=0.995)
     fig.tight_layout(rect=(0, 0, 1, 0.945))
-    fig.savefig(os.path.join(outdir, "fig_defaults.png"), dpi=220)
+    fig.savefig(os.path.join(outdir, "fig_defaults." + FMT), dpi=220)
     plt.close(fig)
 
 
@@ -314,18 +314,26 @@ def fig_crossover(res, outdir):
                  "(labels: best sparse / best condensed median solve time)",
                  fontsize=10)
     fig.tight_layout()
-    fig.savefig(os.path.join(outdir, "fig_crossover.png"), dpi=220)
+    fig.savefig(os.path.join(outdir, "fig_crossover." + FMT), dpi=220)
     plt.close(fig)
     return xc
 
 
+FMT = "png"   # set from --format in main()
+
+
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--format", default="png", choices=("png", "pdf"),
+                    help="raster (default, as published) or vector, which a "
+                         "journal's line-art resolution rules do not bind")
     ap.add_argument("--results", default="results.json")
     ap.add_argument("--cpp", default="cpp_results.json")
     ap.add_argument("--wsctl", default="warmstart_controlled.json")
     ap.add_argument("--outdir", default="out")
     a = ap.parse_args()
+    global FMT
+    FMT = a.format
     os.makedirs(a.outdir, exist_ok=True)
     res = json.load(open(a.results))
     cpp = json.load(open(a.cpp))
@@ -336,8 +344,8 @@ def main():
     fig_defaults(res, cpp, wsctl, a.outdir)
     xc = fig_crossover(res, a.outdir)
     print(f"crossover horizon (interpolated): {xc:.2f}")
-    print("wrote fig_pareto.png fig_budget.png fig_defaults.png "
-          "fig_crossover.png to", a.outdir)
+    print(f"wrote fig_pareto.{FMT} fig_budget.{FMT} fig_defaults.{FMT} "
+          f"fig_crossover.{FMT} to", a.outdir)
 
 
 if __name__ == "__main__":
